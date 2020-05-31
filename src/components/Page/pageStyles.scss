@@ -1,0 +1,10 @@
+.page {
+  width: 100vw;
+  height: 100vh;
+  background: #fff
+    url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png);
+
+  &__content {
+    padding-top: 2rem;
+  }
+}

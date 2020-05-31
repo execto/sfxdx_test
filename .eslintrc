@@ -8,5 +8,13 @@
     "es6": true,
     "browser": true,
     "node": true
+  },
+  "rules": {
+    "react/prop-types": "off",
+    "comma-dangle": "off",
+    "implicit-arrow-linebreak": "off",
+    "function-paren-newline": "off",
+    "no-console": "off",
+    "no-debugger": "off"
   }
 }

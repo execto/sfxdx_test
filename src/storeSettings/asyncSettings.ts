@@ -1,10 +1,10 @@
 import { AsyncState } from '../models/async';
 
-export enum AsyncActions {
-  pokemon,
-  pokemonList,
-  pokemonAbility,
-}
+export const AsyncActions = {
+  pokemon: 'pokemon',
+  pokemonList: 'pokemonList',
+  pokemonAbility: 'pokemonAbility',
+};
 
 export const prepareAsyncState = (): AsyncState => {
   const asyncState = Object.keys(AsyncActions).reduce((state, action) => {
