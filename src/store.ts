@@ -1,5 +1,13 @@
 import { createStore } from 'redux';
+import reducer from './reducer';
+import { MainState } from './models/store';
+import { prepareAsyncState } from './storeSettings/asyncSettings';
 
-const initialState = [];
+const preloadedState: MainState = {
+  asyncState: prepareAsyncState(),
+  pokemons: {},
+};
 
-export const strore = createStore();
+const store = createStore(reducer, preloadedState);
+
+export default store;
