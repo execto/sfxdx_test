@@ -1,7 +1,7 @@
-import { Pokemons } from './pokemon';
-import { AsyncState } from './async';
+import { PokemonInfo, PokemonAbility, Pokemons } from './pokemon';
 
 export type MainState = {
-  async: AsyncState;
-  pokemons: Pokemons;
+  pokemonAbility: PokemonAbility | {};
+  pokemon: PokemonInfo | {};
+  pokemons: Pokemons | {};
 };

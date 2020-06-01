@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import pokemons from './reducers/pokemonsReducer';
-import async from './reducers/asyncReducer';
+import pokemon from './reducers/pokemonReducer';
+import pokemonAbility from './reducers/pokemonAbilityReucer';
 
 export default combineReducers({
-  async,
+  pokemonAbility,
+  pokemon,
   pokemons,
 });

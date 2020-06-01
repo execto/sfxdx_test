@@ -6,18 +6,19 @@ import { getPokemonList } from '../../actions/pokemonsActions';
 import { MainState } from '../../models/store';
 import List from '../List/List';
 import PokemonCard from '../PokemonCard/PokemonCard';
+import { Pokemons } from '../../models/pokemon';
 
 const PokemonsListPage: React.FC = () => {
-  const pokemons = useSelector((state: MainState) => state.pokemons);
+  const pokemons: Pokemons = useSelector((state: MainState) => state.pokemons);
   const dispatch = useDispatch();
+
   React.useEffect(() => {
     dispatch(getPokemonList());
   }, []);
 
   const navbar = <Navbar title="Покемоны" />;
-
-  const pokemonsList = Object.keys(pokemons).map((pokemon) => (
-    <PokemonCard key={pokemon}>{pokemons[pokemon].name}</PokemonCard>
+  const pokemonsList = pokemons.pokemons?.map((pokemon) => (
+    <PokemonCard key={pokemon.name}>{pokemon.name}</PokemonCard>
   ));
 
   return (

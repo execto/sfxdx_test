@@ -1,16 +1,26 @@
-import { MainActions } from '../constants/actionTypes';
 import { Action } from '../models/actions';
+import { PokemonsListActions } from '../constants/actionTypes';
 
-export default (state = {}, action: Action) => {
+export default (state: any = {}, action: Action) => {
   switch (action.type) {
-    case MainActions.POKEMON_LIST:
+    case PokemonsListActions.POKEMINS_LIST_LOADED:
       return {
-        ...action.payload,
+        isLoading: false,
+        hasError: false,
+        pokemons: action.payload,
       };
-    case MainActions.POKEMON:
-      return state;
-    case MainActions.POKEMON_ABILITY:
-      return state;
+    case PokemonsListActions.POKEMONS_LIST_LOADING:
+      return {
+        ...state,
+        hasError: false,
+        isLoading: true,
+      };
+    case PokemonsListActions.POKEMONS_LIST_LOAD_ERROR:
+      return {
+        ...state,
+        hasError: true,
+        isLoading: false,
+      };
     default:
       return state;
   }

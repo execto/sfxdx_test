@@ -1,17 +1,27 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 import './pokemonCardStyles.scss';
 
 const PokemonCard: React.FC = ({ children }) => {
-  const chevron = '-->';
+  const chevron = <FontAwesomeIcon icon={faAngleRight} />;
+
   return (
-    <div className="pokemon-card">
+    <Link
+      className="pokemon-card"
+      to={{
+        pathname: '/pokemon',
+        name: children,
+      }}
+    >
       <div className="pokemon-card__avatar">
-        <img src="" alt="poke" />
+        <img src="https://via.placeholder.com/50" alt="poke" />
       </div>
       <div className="pokemon-card__name">{children}</div>
       <div className="pokemon-card__chevron">{chevron}</div>
-    </div>
+    </Link>
   );
 };
 

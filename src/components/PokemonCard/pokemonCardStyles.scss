@@ -1,11 +1,32 @@
 .pokemon-card {
+  text-decoration: none;
   display: flex;
   align-items: center;
   width: 100%;
   height: auto;
   padding: 1rem 2rem;
   border-radius: 1rem;
-  background-color: rgb(245, 245, 245);
+  background-color: rgba(39, 50, 56, 0.5);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__name {
+    color: #fff;
+    font-size: 2rem;
+    text-transform: capitalize;
+    flex-grow: 2;
+  }
+
+  &__avatar {
+    margin-right: 1rem;
+  }
+
+  &__chevron {
+    color: #fff;
+    font-size: 2rem;
+  }
 
   &:not(:last-child) {
     margin-bottom: 1rem;

@@ -3,8 +3,9 @@
   height: 100vh;
   background: #fff
     url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png);
+  padding-top: 4.5rem;
 
   &__content {
-    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 }

@@ -1,13 +1,19 @@
-enum MainActions {
-  'POKEMON_LIST' = 'POKEMON_LIST',
-  'POKEMON' = 'POKEMON',
-  'POKEMON_ABILITY' = 'POKEMON_ABILITY',
+enum PokemonsListActions {
+  'POKEMONS_LIST_LOADING' = 'POKEMONS_LIST_LOADING',
+  'POKEMINS_LIST_LOADED' = 'POKEMINS_LIST_LOADED',
+  'POKEMONS_LIST_LOAD_ERROR' = 'POKEMONS_LIST_LOAD_ERROR',
 }
 
-enum AsyncActionsTypes {
-  'LOAD_START' = 'LOAD_START',
-  'LOAD_ERROR' = 'LOAD_ERROR',
-  'LOAD_SUCCESS' = 'LOAD_SUCCESS',
+enum PokemonActions {
+  'POKEMON_LOADING' = 'POKEMON_LOADING',
+  'POKEMIN_LOADED' = 'POKEMIN_LOADED',
+  'POKEMON_LOAD_ERROR' = 'POKEMON_LOAD_ERROR',
 }
 
-export { MainActions, AsyncActionsTypes };
+enum PokemonAbilityActions {
+  'ABILITY_LOADING' = 'ABILITY_LOADING',
+  'ABILITY_LOADED' = 'ABILITY_LOADED',
+  'ABILITY_LOAD_ERROR' = 'ABILITY_LOAD_ERROR',
+}
+
+export { PokemonsListActions, PokemonActions, PokemonAbilityActions };

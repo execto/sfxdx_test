@@ -2,11 +2,11 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import reducer from './reducer';
 import { MainState } from './models/store';
-import { prepareAsyncState } from './storeSettings/asyncSettings';
 import pokemonsMiddleware from './middlewares/pokemonsMiddleware';
 
 const preloadedState: MainState = {
-  async: prepareAsyncState(),
+  pokemonAbility: {},
+  pokemon: {},
   pokemons: {},
 };
 
