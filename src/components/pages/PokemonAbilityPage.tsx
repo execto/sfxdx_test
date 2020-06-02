@@ -13,7 +13,11 @@ const PokemonAbilityPage: React.FC<PokemonAbilityPageProps> = ({
     <Navbar title={`Способности ${pokemonName}`} backbuttonEnable />
   );
 
-  return <Page navbar={navbar}>Pokemon ability page</Page>;
+  return (
+    <Page navbar={navbar} isLoading={false} hasError={false}>
+      Pokemon ability page
+    </Page>
+  );
 };
 
 export default PokemonAbilityPage;

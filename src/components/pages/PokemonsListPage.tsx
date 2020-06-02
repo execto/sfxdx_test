@@ -9,7 +9,10 @@ import PokemonCard from '../PokemonCard/PokemonCard';
 import { Pokemons } from '../../models/pokemon';
 
 const PokemonsListPage: React.FC = () => {
-  const pokemons: Pokemons = useSelector((state: MainState) => state.pokemons);
+  const pokemonsState: Pokemons = useSelector(
+    (state: MainState) => state.pokemons
+  );
+  const { pokemons, isLoading, hasError } = pokemonsState;
   const dispatch = useDispatch();
 
   React.useEffect(() => {
@@ -17,12 +20,13 @@ const PokemonsListPage: React.FC = () => {
   }, []);
 
   const navbar = <Navbar title="Покемоны" />;
-  const pokemonsList = pokemons.pokemons?.map((pokemon) => (
+
+  const pokemonsList = pokemons?.map((pokemon) => (
     <PokemonCard key={pokemon.name}>{pokemon.name}</PokemonCard>
   ));
 
   return (
-    <Page navbar={navbar}>
+    <Page navbar={navbar} isLoading={isLoading} hasError={hasError}>
       <List>{pokemonsList}</List>
     </Page>
   );

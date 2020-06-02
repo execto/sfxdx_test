@@ -9,13 +9,7 @@ const PokemonCard: React.FC = ({ children }) => {
   const chevron = <FontAwesomeIcon icon={faAngleRight} />;
 
   return (
-    <Link
-      className="pokemon-card"
-      to={{
-        pathname: '/pokemon',
-        name: children,
-      }}
-    >
+    <Link className="pokemon-card" to={`/pokemon/${children}`}>
       <div className="pokemon-card__avatar">
         <img src="https://via.placeholder.com/50" alt="poke" />
       </div>

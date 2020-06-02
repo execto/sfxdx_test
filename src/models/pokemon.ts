@@ -5,11 +5,12 @@ export type Pokemon = {
 };
 
 export interface PokemonInfo extends Pokemon, AsyncState {
-  type: string;
+  types: string[];
   height: number;
   weight: number;
   experience: number;
-  abilitys: [];
+  abilities: [];
+  imgUrl: string;
 }
 
 export interface PokemonAbility extends AsyncState {

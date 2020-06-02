@@ -24,7 +24,7 @@ export const getPokemonList = () => {
   return ApiService.request(asyncAction);
 };
 
-export const getPokemon = () => {
+export const getPokemon = (name: string) => {
   const loadStart = createAction(PokemonActions.POKEMON_LOADING);
 
   const loadSuccess = (pokemon) =>
@@ -36,7 +36,7 @@ export const getPokemon = () => {
 
   const asyncAction = {
     actions: [loadStart, loadSuccess, loadError],
-    apiCall: () => fetch(`${apiUrl}/pokemon?limit=20`),
+    apiCall: () => fetch(`${apiUrl}/pokemon/${name}`),
   };
 
   return ApiService.request(asyncAction);

@@ -15,5 +15,12 @@
 
   &__title {
     font-size: 2rem;
+    text-transform: capitalize;
+  }
+
+  &__backbutton {
+    color: rgba($color: #000000, $alpha: 0.7);
+    font-size: 2rem;
+    margin-right: 1.5rem;
   }
 }
