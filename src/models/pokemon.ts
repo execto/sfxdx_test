@@ -16,6 +16,7 @@ export interface PokemonInfo extends Pokemon, AsyncState {
 export interface PokemonAbility extends AsyncState {
   name: string;
   description: string;
+  pokemons: string[];
 }
 
 export interface Pokemons extends AsyncState {

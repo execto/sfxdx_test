@@ -1,0 +1,24 @@
+$border: 1px solid rgb(142, 147, 150);
+
+.section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border-top: $border;
+  border-bottom: $border;
+  color: #4e4d4d;
+
+  &__title {
+    border-bottom: $border;
+
+    & .title {
+      font-size: 2rem;
+    }
+  }
+
+  &__content {
+    margin-top: 1rem;
+  }
+}

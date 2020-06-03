@@ -17,6 +17,7 @@
     font-size: 2rem;
     text-transform: capitalize;
     flex-grow: 2;
+    text-overflow: ellipsis;
   }
 
   &__avatar {

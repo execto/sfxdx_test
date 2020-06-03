@@ -1,0 +1,19 @@
+.ability-page {
+  & .section {
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__pokemons {
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+
+    & .text {
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}

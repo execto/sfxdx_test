@@ -22,7 +22,9 @@ const PokemonsListPage: React.FC = () => {
   const navbar = <Navbar title="Покемоны" />;
 
   const pokemonsList = pokemons?.map((pokemon) => (
-    <PokemonCard key={pokemon.name}>{pokemon.name}</PokemonCard>
+    <PokemonCard key={pokemon.name} linked>
+      {pokemon.name}
+    </PokemonCard>
   ));
 
   return (

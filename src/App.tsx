@@ -16,8 +16,8 @@ const App = () => (
         <Route exact path="/pokemon/:name">
           <PokemonPage />
         </Route>
-        <Route exact path="/pokemon-ability">
-          <PokemonAbilityPage pokemonName="Пикачу" />
+        <Route exact path="/ability/:name">
+          <PokemonAbilityPage />
         </Route>
       </Switch>
     </Router>

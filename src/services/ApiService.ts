@@ -9,7 +9,6 @@ export class ApiService {
     const [fetching, fetchSuccess, fetchError] = actions.map((action) =>
       makeActionCreator(action)
     );
-
     return (dispatch: Dispatch, getState) => {
       if (shouldFetch && shouldFetch(getState())) {
         return null;
