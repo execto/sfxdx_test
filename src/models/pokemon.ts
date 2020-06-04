@@ -21,4 +21,5 @@ export interface PokemonAbility extends AsyncState {
 
 export interface Pokemons extends AsyncState {
   pokemons: Pokemon[];
+  cashedPokemons: Pokemon[];
 }

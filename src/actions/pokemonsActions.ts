@@ -59,3 +59,6 @@ export const getPokemonAbility = (abilityName: string) => {
 
   return ApiService.request(asyncAction);
 };
+
+export const searchPokemons = (value: string) =>
+  createAction(PokemonsListActions.SEARCH_POKEMONS, { value });

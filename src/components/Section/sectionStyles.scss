@@ -6,9 +6,9 @@ $border: 1px solid rgb(142, 147, 150);
   width: 100%;
   padding: 0.5rem 1rem;
   background-color: #fff;
-  border-top: $border;
-  border-bottom: $border;
   color: #4e4d4d;
+  background-color: rgba(239, 219, 84, 0.22);
+  border-radius: 1rem;
 
   &__title {
     border-bottom: $border;

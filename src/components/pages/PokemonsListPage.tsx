@@ -2,11 +2,12 @@ import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Navbar from '../Navbar/Navbar';
 import Page from '../Page/Page';
-import { getPokemonList } from '../../actions/pokemonsActions';
+import { getPokemonList, searchPokemons } from '../../actions/pokemonsActions';
 import { MainState } from '../../models/store';
 import List from '../List/List';
 import PokemonCard from '../PokemonCard/PokemonCard';
 import { Pokemons } from '../../models/pokemon';
+import SearchToolbar from '../Toolbar/Toolbar';
 
 const PokemonsListPage: React.FC = () => {
   const pokemonsState: Pokemons = useSelector(
@@ -19,6 +20,14 @@ const PokemonsListPage: React.FC = () => {
     dispatch(getPokemonList());
   }, []);
 
+  const handleSearch = React.useCallback((value: string) => {
+    if (!value.length) {
+      dispatch(getPokemonList());
+      return;
+    }
+    dispatch(searchPokemons(value));
+  }, []);
+
   const navbar = <Navbar title="Покемоны" />;
 
   const pokemonsList = pokemons?.map((pokemon) => (
@@ -28,8 +37,14 @@ const PokemonsListPage: React.FC = () => {
   ));
 
   return (
-    <Page navbar={navbar} isLoading={isLoading} hasError={hasError}>
+    <Page
+      navbar={navbar}
+      isLoading={isLoading}
+      hasError={hasError}
+      searchToolbar
+    >
       <List>{pokemonsList}</List>
+      <SearchToolbar onSearch={handleSearch} />
     </Page>
   );
 };

@@ -14,3 +14,9 @@
     padding-bottom: 2rem;
   }
 }
+
+.page-with-toolbar {
+  & .page__content {
+    padding-bottom: 5rem;
+  }
+}
